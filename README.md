@@ -32,7 +32,7 @@ UPS_TARGET="${UPS_TARGET:-myserver@localhost}"
 upsc "$UPS_TARGET" | ./upsc_to_prometheus.awk
 ```
 -----------
-5. Add nologin user to bind upsc process to 
+5. Add nologin prometheus user to bind upsc process for it:
 
 !!**Please be careful with chown command in root directory**:
 ```
@@ -42,7 +42,7 @@ sudo chown -R prometheus:prometheus /opt/upsc-exporter/
 ls -la /opt/upsc-exporter
 ``` 
 -----------
-6. Reload systemctl demon services and start upsc-exporter:
+6. Reload systemctl daemon services and start upsc-exporter:
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable upsc-exporter.socket
@@ -51,7 +51,7 @@ sudo systemctl enable upsc-exporter.socket
 7. Ensure that your service is properly running:
 
 ```
-sudo systemctl enable upsc-exporter.socket
+sudo systemctl status upsc-exporter.socket
 ```
 or via get curl:
 ```
