@@ -5,7 +5,7 @@ Service for send UPS metrics to collectors (such as Prometheus)
 ## How to use:
 ------------
 1. Clone this repostitory to your ```/opt/``` directory and not elsewhere:
-```git clone https://github.com/SergeyKa-cmd/upsc-exporter.git```
+```sudo git clone https://github.com/SergeyKa-cmd/upsc-exporter.git```
 
 -----------
 2. Ensure correct path in ```upsc-exporter@.service``` file to cloned repository in ```/opt/upsc-exporter```:
