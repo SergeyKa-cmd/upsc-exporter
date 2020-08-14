@@ -8,7 +8,7 @@ Service for send UPS metrics to collectors (such as Prometheus)
 ```sudo git clone https://github.com/SergeyKa-cmd/upsc-exporter.git```
 
 -----------
-2. Ensure correct path in ```upsc-exporter@.service``` file to cloned repository in ```/opt/upsc-exporter```:
+2. Ensure correct WorkingDirectory path in ```upsc-exporter@.service``` file to cloned repository in ```/opt/upsc-exporter```:
 ```
 [Service]
 Type=simple
@@ -38,7 +38,7 @@ upsc "$UPS_TARGET" | ./upsc_to_prometheus.awk
 ```
 sudo groupadd --system prometheus
 sudo useradd -s /sbin/nologin --system -g prometheus prometheus
-sudo chown -R /opt/upsc-exporter/
+sudo chown -R prometheus:prometheus /opt/upsc-exporter/
 ls -la /opt/upsc-exporter
 ``` 
 -----------
