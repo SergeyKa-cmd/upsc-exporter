@@ -37,7 +37,7 @@ upsc "$UPS_TARGET" | ./upsc_to_prometheus.awk
 !!**Please be careful with chown command in root directory**:
 ```
 sudo groupadd --system prometheus
-sudo useradd -s /sbin/nologin --system -g prometheus prometheus
+sudo useradd -s /usr/sbin/nologin --system -g prometheus prometheus
 sudo chown -R prometheus:prometheus /opt/upsc-exporter/
 ls -la /opt/upsc-exporter
 ``` 
@@ -46,6 +46,7 @@ ls -la /opt/upsc-exporter
 ```
 sudo systemctl daemon-reload
 sudo systemctl enable upsc-exporter.socket
+sudo systemctl start upsc-exporter.socket
 ``` 
 -----------
 7. Ensure that your service is properly running:
